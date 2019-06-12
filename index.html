@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+        <title>Firebase - Train</title>
+
+    </head>
+
+    <body>
+        <div class="container">
+
+            <header>Train Scheduler</header>
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>Current Train Schedule</h3>
+                        <table class='table'>
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th> 
+                                    <th>Destination</th> 
+                                    <th>Frequency (min)</th> 
+                                    <th>Next Arrival</th> 
+                                    <th>Minutes Away</th>
+    
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <!-- Appending here -->
+                                </tbody>
+                        </table>
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <h1>Add a Train</h1>
+                            <div class="form-group">
+                    
+                                <input type="text" class="form-control" id="trainName" placeholder="Train Name" required><div class="invalid-feedback">invalid custom select feedback</div>
+                                <input type="text" class="form-control" id="trainDest" placeholder="Destination">
+                                <input type="text" class="form-control" id="trainStartTime" placeholder="First Train Time (HH:MM)">
+                                <input type="text" class="form-control" id="trainFreq" placeholder="Frequency (mins)">
+                                <br>
+                                <button id="submit">Submit Changes</button>  
+                            </div>   
+                    </div> 
+                </div>                     
+                        
+                
+
+                <footer id="foot">
+                    
+                            <a href="https://github.com/phillip0150">Phil Valdez</a>
+                      
+                </footer>
+
+        </div>
+
+         
+        <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+        <!-- Firebase Core JavaScript Link -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+        <!-- Specific Firebase products we want (Database) -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+        <!-- Script -->
+        <script src="assets/javascript/train.js"></script>
+
+    </body>
+</html>
