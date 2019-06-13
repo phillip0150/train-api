@@ -81,6 +81,8 @@ $("#submit").on("click", function(event){
     else{
     // Minute Until Train
     var tMinutesTillTrain = moment(firstTime, 'HHmm').diff(moment(), "minutes");
+
+    
     
 
     // Next Train

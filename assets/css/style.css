@@ -1,3 +1,47 @@
 body {
+    margin: 0 0 0 0;
+    background-color: #1F7A8C;
+}
+
+.container{
+    position: relative;
+    min-height: 100vh;
+    
+}
+
+
+
+.row{
+        background-color:#E1E5F2;
+        margin-top: 2%;
+       
+}
+
+h1{
     text-align: center;
+}
+
+header{
+    background-color: #BFDBF7;
+    font-size: 48px;
+    margin: 0 0 0 0;
+    text-align: center;
+}
+
+thead{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table {
+    background-color: #FFFFFF;
+    text-align: center;
+    
+    
+}
+
+.foot{
+    padding: 2%;
+    text-align: center;
+    margin-top: 1%;
 }

@@ -5,22 +5,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Reset CSS -->
         <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Style CSS -->
         <link href="assets/css/style.css" type="text/css" rel="stylesheet">
         <title>Firebase - Train</title>
 
     </head>
 
     <body>
-        <div class="container">
+        <header>Train Tracker<img src="https://cdn4.iconfinder.com/data/icons/dot/256/train_transportation.png" width="10%" height="10%"></header>
 
-            <header>Train Scheduler</header>
+        <div class="container">
 
             <div class="row">
                 <div class="col-sm">
-                    <h3>Current Train Schedule</h3>
-                        <table class='table'>
+                    <h1>Current Train Schedule</h1>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Train Name</th> 
@@ -28,13 +32,13 @@
                                     <th>Frequency (min)</th> 
                                     <th>Next Arrival</th> 
                                     <th>Minutes Away</th>
-    
                                 </tr>
                             </thead>
                                 <tbody>
                                     <!-- Appending here -->
                                 </tbody>
                         </table>
+                    </div>
                 </div>
             </div>
 
@@ -43,39 +47,42 @@
                     <h1>Add a Train</h1>
                         <div class="form-group">
                 
-                            <input type="text" class="form-control" id="trainName" placeholder="Train Name" required><div class="invalid-feedback">invalid custom select feedback</div>
-                            <input type="text" class="form-control" id="trainDest" placeholder="Destination">
-                            <input type="text" class="form-control" id="trainStartTime" placeholder="First Train Time (HHMM)">
-                            <input type="text" class="form-control" id="trainFreq" placeholder="Frequency (mins)">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" class="form-control" id="trainName" placeholder="">
+                            <label for="trainDest">Destination</label>
+                            <input type="text" class="form-control" id="trainDest" placeholder="">
+                            <label for="trainStartTime">First Train Time (HHMM)</label>
+                            <input type="number" class="form-control" id="trainStartTime" placeholder="">
+                            <label for="trainFreq">Frequency (mins)</label>
+                            <input type="number" class="form-control" id="trainFreq" placeholder="">
                             <br>
                             <button id="submit">Submit Changes</button>  
                         </div>   
                 </div> 
-            </div>                     
-                        
-                
-
-            <footer class="foot">
-                    
-                    <a href="https://github.com/phillip0150">Phil Valdez</a>
-                  
-            </footer>   
+            </div>  
+            <br> 
+            <div class="row">
+                <div class="col-sm">                            
+                    <footer class="foot">
+                        <a href="https://github.com/phillip0150">Phil Valdez</a>
+                    </footer> 
+                </div>
+            </div>  
 
         </div>
 
-        
-         
         <!-- Link to Moment.js should go here -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
         <!-- Firebase Core JavaScript Link -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
         <!-- Specific Firebase products we want (Database) -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
-
         <!-- Script -->
         <script src="assets/javascript/train.js"></script>
 
