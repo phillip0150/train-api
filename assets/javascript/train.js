@@ -51,17 +51,46 @@ var config = {
       //We want to append our info to the table (tbody)
       //the next train will arrive; this should be relative to the current time
       //mins away = current time - arrival time
-      settingFreq = moment(snapshot.val().trainFreq, "mm").format("HHmm");
-      nextTime = moment().add(settingFreq, 'minutes').format("LT");
-      console.log("settingTime: " + nextTime);
 
+      // Assumptions
+      var tFrequency = snapshot.val().trainFreq;
 
-      console.log(moment().format("LT"));
+      // Time is 3:30 AM
+      var firstTime = snapshot.val().trainStart;
+
+      // First Time (pushed back 1 year to make sure it comes before current time)
+      var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+
+      // Current Time
+      var currentTime = moment();
+
+      // Difference between the times
+      var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+
+      // Time apart (remainder)
+      var tRemainder = diffTime % tFrequency;
+
+      //Checking to see if start time is after current time
+      console.log(currentTime.format("HHmm"));
+      if(parseInt(currentTime.format("HHmm"))>parseInt(firstTime)){
+        // Minute Until Train
+        var tMinutesTillTrain = tFrequency - tRemainder;
+
+        // Next Train
+        nextTime = moment().add(tMinutesTillTrain, "minutes").format("LT");
+      }
+      else{
+      // Minute Until Train
+      var tMinutesTillTrain = moment(firstTime, 'HHmm').diff(moment(), "minutes");
+
+      // Next Train
+      nextTime = moment(firstTime, "HHmm").format("LT");
+      }
       
       $("tbody").append("<tr><td>" + 
         snapshot.val().trainName + "</td>" + "<td>" + 
         snapshot.val().trainDest + "</td>" + "<td>" + 
         snapshot.val().trainFreq + "</td>" + 
         "<td>" + nextTime + "</td>" + 
-        "<td>Mins away would go here</td>");
+        "<td>"+ tMinutesTillTrain + "</td>");
     });
