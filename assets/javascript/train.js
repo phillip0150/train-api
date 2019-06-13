@@ -71,7 +71,6 @@ var config = {
       var tRemainder = diffTime % tFrequency;
 
       //Checking to see if start time is after current time
-      console.log(currentTime.format("HHmm"));
       if(parseInt(currentTime.format("HHmm"))>parseInt(firstTime)){
         // Minute Until Train
         var tMinutesTillTrain = tFrequency - tRemainder;
