@@ -54,3 +54,7 @@ button{
     border-radius: 12px;
     background-color: #BFDBF7;
 }
+
+.error {
+    color: red;
+}

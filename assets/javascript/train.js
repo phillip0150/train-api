@@ -30,15 +30,25 @@ $("#submit").on("click", function(event){
   start = $("#trainStartTime").val().trim();
   freq = $("#trainFreq").val().trim();
 
+  //checking to see if user entered a freq thats between 10 720 ,a start time between 0 and 2400, and to make sure fields are not empty
+  if (freq > 720 || freq < 10 || !name || !dest || !start || !freq || start >2400 || start < 0){
+    $("#fieldError").text("Some fields are empty or incorrect");
+    return;
+  }
+  else{
   //Push these values to the database
   database.ref().push({
-    trainName: name, 
-    trainDest: dest,
-    trainStart: start,
-    trainFreq: freq,
+  trainName: name, 
+  trainDest: dest,
+  trainStart: start,
+  trainFreq: freq,
   });
 
-  document.getElementById("myForm").reset();
+    document.getElementById("myForm").reset();
+    $(".error").empty();
+  }
+
+  
 
 });
 

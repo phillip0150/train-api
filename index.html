@@ -54,13 +54,13 @@
                             <label for="trainDest">Destination</label>
                             <input type="text" class="form-control" id="trainDest" placeholder=" ">
                             <br>
-                            <label for="trainStartTime">First Train Time (HHMM)</label>
-                            <input type="number" class="form-control" id="trainStartTime" placeholder=" ">
+                            <label for="trainStartTime">First Train Time (HHMM)</label><br><span class="error" id="timeError"></span>
+                            <input type="number" class="form-control" id="trainStartTime" placeholder="0000-2400">
                             <br>
-                            <label for="trainFreq">Frequency (mins)</label>
-                            <input type="number" class="form-control" id="trainFreq" placeholder=" ">
+                            <label for="trainFreq">Frequency (mins)</label><br><span class="error" id="freqError"></span>
+                            <input type="number" class="form-control" id="trainFreq" placeholder="10-720">
                             <br>
-                            <button id="submit">Add Train</button>  
+                            <button id="submit">Add Train</button><br><br><span class="error" id="fieldError"></span>
                             </form>
                         </div>   
                 </div> 
