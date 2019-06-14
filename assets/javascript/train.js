@@ -1,7 +1,3 @@
-// Initialize Firebase (YOUR OWN APP)
-// Make sure that your configuration matches your firebase script version
-// (Ex. 3.0 != 3.7.1)
-
 // Create a variable to reference the database
 var config = {
   apiKey: "AIzaSyATgpyEE0M3p-QdpAd1VehOCXqLtWPrG0M",
@@ -40,12 +36,9 @@ $("#submit").on("click", function(event){
     trainDest: dest,
     trainStart: start,
     trainFreq: freq,
-    dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
 
-  
   document.getElementById("myForm").reset();
-  
 
 });
 
@@ -85,9 +78,6 @@ $("#submit").on("click", function(event){
     else{
     // Minute Until Train
     var tMinutesTillTrain = moment(firstTime, 'HHmm').diff(moment(), "minutes");
-
-    
-    
 
     // Next Train
     nextTime = moment(firstTime, "HHmm").format("LT");
