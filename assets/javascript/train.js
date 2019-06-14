@@ -51,8 +51,7 @@ $("#submit").on("click", function(event){
 
     // Assumptions
     var tFrequency = snapshot.val().trainFreq;
-
-    // Time is 3:30 AM
+    
     var firstTime = snapshot.val().trainStart;
 
     // First Time (pushed back 1 year to make sure it comes before current time)
