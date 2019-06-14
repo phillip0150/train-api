@@ -43,6 +43,10 @@ $("#submit").on("click", function(event){
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   });
 
+  
+  document.getElementById("myForm").reset();
+  
+
 });
 
   //First we need to get info to data
